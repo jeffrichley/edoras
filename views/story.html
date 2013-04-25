@@ -1,0 +1,134 @@
+<div>
+	<div class="row">
+		<div class="span10">
+			<h3>Title</h3>
+			<input type="text" class="span8" data-ng-model="story.title">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span10">
+			<h3>Description</h3>
+			<textarea rows="8" class="span8" data-ng-model="story.narrative"></textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Effort</h3>
+			<select data-ng-model="story.effort" data-ng-options="opt.value as opt.label for opt in effortOptions"></select>
+		</div>
+		<div class="span4 offset1">
+			<h3>Status</h3>
+			<select data-ng-model="story.status" data-ng-options="opt.value as opt.label for opt in statusOptions"></select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Feature</h3>
+			<select data-ng-model="story.featureId" data-ng-options="f.timestamp as f.title for f in features.asArray()"></select>
+		</div>
+		<div class="span4 offset1">
+			<h3>Iteration</h3>
+			<select data-ng-model="story.iterationId" data-ng-options="f.timestamp as f.title for f in iterations.asArray()"></select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Tasks</h3>
+		</div>
+	</div>		
+	<div class="row">
+		<div class="span8">
+			<table class="table table-hover table-bordered table-striped">
+				<tr>
+					<th>Task</th>
+					<th>Complete</th>
+				</tr>
+				<tr data-ng-class="{success: task.status==3, info: task.status==2}" data-ng-repeat="task in tasks.asArray() | filter:{storyId:story.timestamp}">
+					<td>{{task.narrative}}</td>
+					<td width="20%"><select data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
+				</tr>
+			</table>
+		</div>
+		<div class="span3">
+			<div class="row">
+				<div class="span3">
+					<textarea rows="3" class="span3" data-ng-model="newTask"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span2">
+					<button class="btn" data-ng-click="addTask()">Add Task</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Acceptance Test</h3>
+		</div>
+	</div>		
+	<div class="row">
+		<div class="span8">
+			<table class="table table-hover table-bordered table-striped">
+				<tr>
+					<th>Test</th>
+					<th>Passed</th>
+				</tr>
+				<tr data-ng-class="{success: acceptanceTest.status == 3, info: acceptanceTest.status == 2, error: acceptanceTest.status == 4}" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{storyId:story.timestamp}">
+					<td>{{acceptanceTest.narrative}}</td>
+					<td width="20%"><select data-ng-model="acceptanceTest.status" data-ng-options="o.value as o.label for o in acceptanceOptions"></select></td>
+				</tr>
+			</table>
+		</div>
+		<div class="span3">
+			<div class="row">
+				<div class="span3">
+					<textarea rows="3" class="span3" data-ng-model="newAcceptanceTest"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span2">
+					<button class="btn" data-ng-click="addAcceptanceTest()">Add Test</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span4">
+			<h3>Comments</h3>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="span8">
+			<table class="table table-hover table-bordered table-striped">
+				<tr data-ng-repeat="comment in comments.asArray() | filter:{ownerId:story.timestamp}">
+					<td>{{comment.narrative}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="span3">
+			<div class="row">
+				<div class="span3">
+					<textarea rows="3" class="span3" data-ng-model="newComment"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span2">
+					<button class="btn" data-ng-click="addComment()">Add Comment</button>
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span10">
+			<button class="btn btn-danger" data-ng-click="deleteStory()">Delete Story</button>
+		</div>
+	</div>
+</div></div>

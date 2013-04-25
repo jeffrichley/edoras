@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="span10">
+		<button class="btn" data-ng-click="addFeature()">Add Feature</button>
+	</div>
+</div>
+
+<div class="row">
+	<ul class="thumbnails">
+		<li class="span4" data-ng-repeat="feature in features.asArray()">
+			<div class="thumbnail">
+				<a data-ng-href="#/feature/{{feature.timestamp}}">
+					<h3><span data-ng-show="!feature.title">Unnamed Feature</span>{{feature.title}}</h3>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>

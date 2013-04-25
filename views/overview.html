@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="span4">
+		<h3>In Progress Tasks</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="span10">
+		<table class="table table-hover table-bordered table-striped">
+			<tr>
+				<th>Task</th>
+			</tr>
+			<tr class="info" data-ng-repeat="task in tasks.asArray() | filter:{status:2}">
+				<td>{{task.narrative}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<h3>In Testing Tests</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="span10">
+		<table class="table table-hover table-bordered table-striped">
+			<tr>
+				<th>Task</th>
+			</tr>
+			<tr class="info" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{status:2}">
+				<td>{{acceptanceTest.narrative}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<h3>Failed Tests</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="span10">
+		<table class="table table-hover table-bordered table-striped">
+			<tr>
+				<th>Task</th>
+			</tr>
+			<tr class="error" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{status:4}">
+				<td>{{acceptanceTest.narrative}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
