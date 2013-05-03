@@ -5,13 +5,10 @@
 </div>
 
 <div class="row">
-	<ul class="thumbnails">
-		<li class="span4" data-ng-repeat="feature in features.asArray()">
-			<div class="thumbnail">
-				<a data-ng-href="#/feature/{{feature.timestamp}}">
-					<h3><span data-ng-show="!feature.title">Unnamed Feature</span>{{feature.title}}</h3>
-				</a>
-			</div>
-		</li>
-	</ul>
+	<div class="media" data-ng-repeat="feature in features.asArray()">
+		<div class="media-body">
+			<h4 class="media-heading"><a data-ng-href="#/feature/{{feature.timestamp}}">{{feature.title}}</a></h4>
+			{{feature.narrative}}
+		</div>
+	</div>
 </div>

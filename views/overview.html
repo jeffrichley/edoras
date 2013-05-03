@@ -10,7 +10,7 @@
 				<th>Task</th>
 			</tr>
 			<tr class="info" data-ng-repeat="task in tasks.asArray() | filter:{status:2}">
-				<td>{{task.narrative}}</td>
+				<td><a data-ng-href="#/story/{{task.storyId}}">{{task.narrative}}</a></td>
 			</tr>
 		</table>
 	</div>
