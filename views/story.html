@@ -31,7 +31,9 @@
 		</div>
 		<div class="span4 offset1">
 			<h3>Iteration</h3>
-			<select data-ng-model="story.iterationId" data-ng-options="f.timestamp as f.title for f in iterations.asArray()"></select>
+			<select data-ng-model="story.iterationId" data-ng-options="f.timestamp as f.title for f in iterations.asArray()">
+				<option value="">Backlog</option>
+			</select>
 		</div>
 	</div>
 
