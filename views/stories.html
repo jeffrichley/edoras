@@ -5,13 +5,10 @@
 </div>
 
 <div class="row">
-	<ul class="thumbnails">
-		<li class="span4" data-ng-repeat="story in stories.asArray()">
-			<div class="thumbnail">
-				<a data-ng-href="#/story/{{story.timestamp}}">
-					<h3><span data-ng-show="!story.title">test</span>{{story.title}}</h3>
-				</a>
-			</div>
-		</li>
-	</ul>
+	<div class="media" data-ng-repeat="story in stories.asArray()">
+		<div class="media-body">
+			<h4 class="media-heading"><a data-ng-href="#/story/{{story.timestamp}}">{{story.title}}</a></h4>
+			{{story.narrative}}
+		</div>
+	</div>
 </div>

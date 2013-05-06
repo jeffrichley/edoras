@@ -7,17 +7,24 @@
 
 <div class="row">
 	<div class="span10">
+		<h3>Status</h3>
+		<select data-ng-model="iteration.status" data-ng-options="opt.value as opt.label for opt in statusOptions"></select>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span10">
 		<h3>Stories</h3>
 		<table class="table table-hover table-bordered table-striped">
-			<!--
-			<tr data-ng-repeat="story in stories">
-			-->
+			<tr>
+				<th></th>
+				<th>Title</th>
+				<th>Points</th>
+			</tr>
 			<tr data-ng-repeat="story in stories.asArray() | filter:{iterationId:iteration.timestamp}">
 				<td>{{$index + 1}}</td>
 				<td><a data-ng-href="#/story/{{story.timestamp}}">{{story.title}}</a></td>
-				<!--
-				<td><button class="btn btn-danger" data-ng-click="removeStory({{story.timestamp}})">Remove</button></td>
-				-->
+				<td>{{story.effort}}</td>
 			</tr>
 		</table>
 	</div>
