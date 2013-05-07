@@ -47,11 +47,13 @@
 			<table class="table table-hover table-bordered table-striped">
 				<tr>
 					<th>Task</th>
+					<th>Owner</th>
 					<th>Complete</th>
 				</tr>
 				<tr data-ng-class="{success: task.status==3, info: task.status==2}" data-ng-repeat="task in tasks.asArray() | filter:{storyId:story.timestamp}">
 					<td>{{task.narrative}}</td>
-					<td width="20%"><select data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
+					<td width="5%"><select data-ng-model="task.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
+					<td width="5%"><select data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
 				</tr>
 			</table>
 		</div>

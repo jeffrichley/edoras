@@ -23,9 +23,10 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <div class="navbar">
+    <div class="navbar" data-ng-controller="MainCtrl">
       <div class="navbar-inner">
         <a class="brand" href="#">Edoras Project Management</a>
+        <img height="35" width="35" title="{{collabs.displayName}}" class="img-rounded pull-right" data-ng-repeat="collabs in collaborators" data-ng-src="{{collabs.photoUrl}}">
       </div>
     </div>
 
@@ -45,13 +46,13 @@
 
 
 
-    <script src="scripts/1212e085.vendor.js"></script>
+    <script src="scripts/7f423002.vendor.js"></script>
 
     <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 
   <!-- Load the utility library. -->
 
-    <script src="scripts/76ceadb6.scripts.js"></script>
+    <script src="scripts/4387006d.scripts.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
