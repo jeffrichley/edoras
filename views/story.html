@@ -43,21 +43,21 @@
 		</div>
 	</div>		
 	<div class="row">
-		<div class="span8">
+		<div class="span10">
 			<table class="table table-hover table-bordered table-striped">
 				<tr>
 					<th>Task</th>
 					<th>Owner</th>
-					<th>Complete</th>
+					<th>Status</th>
 				</tr>
 				<tr data-ng-class="{success: task.status==3, info: task.status==2}" data-ng-repeat="task in tasks.asArray() | filter:{storyId:story.timestamp}">
 					<td>{{task.narrative}}</td>
-					<td width="5%"><select data-ng-model="task.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
-					<td width="5%"><select data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
+					<td><select class="span2" data-ng-model="task.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
+					<td><select class="span2" data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
 				</tr>
 			</table>
 		</div>
-		<div class="span3">
+		<div class="span2">
 			<div class="row">
 				<div class="span3">
 					<textarea rows="3" class="span3" data-ng-model="newTask"></textarea>
@@ -77,7 +77,7 @@
 		</div>
 	</div>		
 	<div class="row">
-		<div class="span8">
+		<div class="span10">
 			<table class="table table-hover table-bordered table-striped">
 				<tr>
 					<th>Test</th>
@@ -85,11 +85,11 @@
 				</tr>
 				<tr data-ng-class="{success: acceptanceTest.status == 3, info: acceptanceTest.status == 2, error: acceptanceTest.status == 4}" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{storyId:story.timestamp}">
 					<td>{{acceptanceTest.narrative}}</td>
-					<td width="20%"><select data-ng-model="acceptanceTest.status" data-ng-options="o.value as o.label for o in acceptanceOptions"></select></td>
+					<td><select class="span2" data-ng-model="acceptanceTest.status" data-ng-options="o.value as o.label for o in acceptanceOptions"></select></td>
 				</tr>
 			</table>
 		</div>
-		<div class="span3">
+		<div class="span2">
 			<div class="row">
 				<div class="span3">
 					<textarea rows="3" class="span3" data-ng-model="newAcceptanceTest"></textarea>
@@ -109,14 +109,14 @@
 		</div>
 	</div>	
 	<div class="row">
-		<div class="span8">
+		<div class="span10">
 			<table class="table table-hover table-bordered table-striped">
 				<tr data-ng-repeat="comment in comments.asArray() | filter:{ownerId:story.timestamp}">
 					<td>{{comment.narrative}}</td>
 				</tr>
 			</table>
 		</div>
-		<div class="span3">
+		<div class="span2">
 			<div class="row">
 				<div class="span3">
 					<textarea rows="3" class="span3" data-ng-model="newComment"></textarea>
