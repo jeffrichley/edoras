@@ -8,9 +8,11 @@
 		<table class="table table-hover table-bordered table-striped">
 			<tr>
 				<th>Task</th>
+				<th class="span2">Owner</th>
 			</tr>
 			<tr class="info" data-ng-repeat="task in tasks.asArray() | filter:{status:2}">
 				<td><a data-ng-href="#/story/{{task.storyId}}">{{task.narrative}}</a></td>
+				<td class="span2">{{getUserName(task.ownerId)}}</td>
 			</tr>
 		</table>
 	</div>
@@ -26,9 +28,11 @@
 		<table class="table table-hover table-bordered table-striped">
 			<tr>
 				<th>Task</th>
+				<th class="span2">Owner</th>
 			</tr>
 			<tr class="info" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{status:2}">
-				<td>{{acceptanceTest.narrative}}</td>
+				<td><a data-ng-href="#/story/{{acceptanceTest.storyId}}">{{acceptanceTest.narrative}}</a></td>
+				<td class="span2">{{getUserName(acceptanceTest.ownerId)}}</td>
 			</tr>
 		</table>
 	</div>

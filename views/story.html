@@ -47,8 +47,8 @@
 			<table class="table table-hover table-bordered table-striped">
 				<tr>
 					<th>Task</th>
-					<th>Owner</th>
-					<th>Status</th>
+					<th class="span2">Owner</th>
+					<th class="span2">Status</th>
 				</tr>
 				<tr data-ng-class="{success: task.status==3, info: task.status==2}" data-ng-repeat="task in tasks.asArray() | filter:{storyId:story.timestamp}">
 					<td>{{task.narrative}}</td>
@@ -81,10 +81,12 @@
 			<table class="table table-hover table-bordered table-striped">
 				<tr>
 					<th>Test</th>
-					<th>Passed</th>
+					<th class="span2">Owner</th>
+					<th class="span2">Status</th>
 				</tr>
 				<tr data-ng-class="{success: acceptanceTest.status == 3, info: acceptanceTest.status == 2, error: acceptanceTest.status == 4}" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{storyId:story.timestamp}">
 					<td>{{acceptanceTest.narrative}}</td>
+					<td><select class="span2" data-ng-model="acceptanceTest.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
 					<td><select class="span2" data-ng-model="acceptanceTest.status" data-ng-options="o.value as o.label for o in acceptanceOptions"></select></td>
 				</tr>
 			</table>
