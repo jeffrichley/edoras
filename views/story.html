@@ -51,7 +51,7 @@
 					<th class="span2">Status</th>
 				</tr>
 				<tr data-ng-class="{success: task.status==3, info: task.status==2}" data-ng-repeat="task in tasks.asArray() | filter:{storyId:story.timestamp}">
-					<td>{{task.narrative}}</td>
+					<td><input type="text" class="span6" data-ng-model="task.narrative"></td>
 					<td><select class="span2" data-ng-model="task.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
 					<td><select class="span2" data-ng-model="task.status" data-ng-options="o.value as o.label for o in taskOptions"></select></td>
 				</tr>
@@ -85,7 +85,7 @@
 					<th class="span2">Status</th>
 				</tr>
 				<tr data-ng-class="{success: acceptanceTest.status == 3, info: acceptanceTest.status == 2, error: acceptanceTest.status == 4}" data-ng-repeat="acceptanceTest in acceptanceTests.asArray() | filter:{storyId:story.timestamp}">
-					<td>{{acceptanceTest.narrative}}</td>
+					<td><input type="text" class="span6" data-ng-model="acceptanceTest.narrative"></td>
 					<td><select class="span2" data-ng-model="acceptanceTest.ownerId" data-ng-options="o.userId as o.displayName for o in users.asArray()"></select></td>
 					<td><select class="span2" data-ng-model="acceptanceTest.status" data-ng-options="o.value as o.label for o in acceptanceOptions"></select></td>
 				</tr>
