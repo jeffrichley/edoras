@@ -17,7 +17,7 @@
 	<!-- | filter: storyFilter -->
 	<div class="media" data-ng-repeat="story in stories.asArray() | filter: storyFilter | filter: search">
 		<div class="media-body">
-			<h4 class="media-heading"><a data-ng-href="#/story/{{story.timestamp}}">{{story.title}}</a></h4>
+			<h4 class="media-heading"><a data-ng-href="#/story/{{story.timestamp}}">{{story.id}} - {{story.title}}</a></h4>
 			{{story.narrative}}
 		</div>
 	</div>

@@ -23,7 +23,7 @@
 			</tr>
 			<tr data-ng-repeat="story in stories.asArray() | filter:{iterationId:iteration.timestamp}">
 				<td>{{$index + 1}}</td>
-				<td><a data-ng-href="#/story/{{story.timestamp}}">{{story.title}}</a></td>
+				<td><a data-ng-href="#/story/{{story.timestamp}}">{{story.id}} - {{story.title}}</a></td>
 				<td>{{story.effort}}</td>
 			</tr>
 		</table>
